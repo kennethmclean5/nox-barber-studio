@@ -1397,19 +1397,6 @@ footer {
 
 </div>
 
-<!-- BOOKING MODAL -->
-<div class="booking-modal-overlay" id="bookingOverlay" onclick="closeBooking()"></div>
-<div class="booking-modal" id="bookingModal">
-  <div class="booking-modal-header">
-    <div class="booking-modal-title">
-      <h3>Book an Appointment</h3>
-      <p id="bookingBarberName"></p>
-    </div>
-    <button class="booking-modal-close" onclick="closeBooking()" aria-label="Close">✕</button>
-  </div>
-  <div class="booking-modal-body" id="bookingBody">
-  </div>
-</div>
 
 <!-- LOGIN MODAL -->
 <div class="login-overlay" id="loginOverlay" onclick="if(event.target===this)closeLoginModal()">
@@ -1443,30 +1430,23 @@ footer {
 </footer>
 
 <script>
-// Booking modal
+// Booking popup
 var NEARCUT_URL = 'https://iframe-55801.nearcut.com';
 
 function openBooking(barberName) {
-  document.getElementById('bookingBarberName').textContent = barberName ? 'with ' + barberName : '';
-  
-  // Create iframe dynamically so it loads fresh each time
-  var body = document.getElementById('bookingBody');
-  body.innerHTML = '<iframe src="' + NEARCUT_URL + '" allow="payment" title="Book an appointment"></iframe>';
-  
-  document.getElementById('bookingOverlay').classList.add('active');
-  document.getElementById('bookingModal').classList.add('active');
-  document.body.style.overflow = 'hidden';
+  var width = 500;
+  var height = 700;
+  var left = (screen.width - width) / 2;
+  var top = (screen.height - height) / 2;
+  window.open(
+    NEARCUT_URL,
+    'nearcut_booking',
+    'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top + ',scrollbars=yes,resizable=yes'
+  );
 }
 
 function closeBooking() {
-  document.getElementById('bookingOverlay').classList.remove('active');
-  document.getElementById('bookingModal').classList.remove('active');
-  document.body.style.overflow = '';
-  
-  // Remove iframe to stop it running in background
-  setTimeout(function() {
-    document.getElementById('bookingBody').innerHTML = '';
-  }, 300);
+  // kept for escape key handler compatibility
 }
 
 // Login modal
