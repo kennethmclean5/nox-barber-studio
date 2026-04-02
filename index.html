@@ -71,32 +71,54 @@ body.menu-open {
   overflow: hidden;
 }
 
-/* THEME TOGGLE */
-.theme-toggle {
-  width: 40px;
-  height: 40px;
+/* FLOATING THEME TOGGLE */
+.theme-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   border: 1px solid var(--border);
-  background: transparent;
+  background: var(--bg-card);
   color: var(--text);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   transition: all 0.3s;
-  margin-left: 16px;
+  z-index: 90;
+  box-shadow: 0 2px 12px var(--shadow, rgba(0,0,0,0.15));
 }
 
-.theme-toggle:hover {
+.theme-float:hover {
   border-color: var(--accent);
   color: var(--accent);
+  transform: scale(1.1);
 }
 
-.theme-toggle .icon-sun { display: none; }
-.theme-toggle .icon-moon { display: block; }
-[data-theme="light"] .theme-toggle .icon-sun { display: block; }
-[data-theme="light"] .theme-toggle .icon-moon { display: none; }
+.theme-float .icon-sun { display: none; }
+.theme-float .icon-moon { display: block; }
+[data-theme="light"] .theme-float .icon-sun { display: block; }
+[data-theme="light"] .theme-float .icon-moon { display: none; }
+
+/* MOBILE THEME TOGGLE */
+.mobile-theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mobile-theme-toggle .icon-sun { display: none; }
+.mobile-theme-toggle .icon-moon { display: inline; }
+[data-theme="light"] .mobile-theme-toggle .icon-sun { display: inline; }
+[data-theme="light"] .mobile-theme-toggle .icon-moon { display: none; }
+
+.mobile-theme-label-dark { display: inline; }
+.mobile-theme-label-light { display: none; }
+[data-theme="light"] .mobile-theme-label-dark { display: none; }
+[data-theme="light"] .mobile-theme-label-light { display: inline; }
 
 /* SCROLLBAR */
 ::-webkit-scrollbar { width: 8px; }
@@ -1099,6 +1121,7 @@ footer {
   .nav-links { display: none; }
   .nav-book { display: none; }
   .nav-members { display: none; }
+  .theme-float { display: none; }
   .barbers-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
   .contact-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -1146,10 +1169,6 @@ footer {
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-right">
-    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
-      <span class="icon-moon">☽</span>
-      <span class="icon-sun">☀</span>
-    </button>
     <a href="javascript:void(0)" class="nav-members" onclick="openLoginModal()">Members</a>
     <a href="#barbers" class="nav-book">Book Now</a>
   </div>
@@ -1165,9 +1184,23 @@ footer {
     <li><a href="#services" onclick="toggleMenu()">Services</a></li>
     <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
     <li><a href="javascript:void(0)" onclick="toggleMenu(); openLoginModal()">Members</a></li>
+    <li>
+      <a href="javascript:void(0)" onclick="toggleTheme()" class="mobile-theme-toggle">
+        <span class="icon-moon">☽</span>
+        <span class="icon-sun">☀</span>
+        <span class="mobile-theme-label-dark">Light Mode</span>
+        <span class="mobile-theme-label-light">Dark Mode</span>
+      </a>
+    </li>
   </ul>
   <a href="#barbers" class="mobile-book" onclick="toggleMenu()">Book Now</a>
 </div>
+
+<!-- FLOATING THEME TOGGLE -->
+<button class="theme-float" onclick="toggleTheme()" aria-label="Toggle theme">
+  <span class="icon-moon">☽</span>
+  <span class="icon-sun">☀</span>
+</button>
 
 <!-- MAIN CONTENT -->
 <div class="main">
