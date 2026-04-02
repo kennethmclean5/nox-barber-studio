@@ -98,27 +98,36 @@ body.menu-open {
   transform: scale(1.1);
 }
 
-.theme-float .icon-sun { display: none; }
-.theme-float .icon-moon { display: block; }
-[data-theme="light"] .theme-float .icon-sun { display: block; }
-[data-theme="light"] .theme-float .icon-moon { display: none; }
+.theme-float .theme-icon-sun { display: none; }
+.theme-float .theme-icon-moon { display: block; }
+[data-theme="light"] .theme-float .theme-icon-sun { display: block; }
+[data-theme="light"] .theme-float .theme-icon-moon { display: none; }
 
-/* MOBILE THEME TOGGLE */
-.mobile-theme-toggle {
+/* MOBILE THEME BUTTON */
+.mobile-theme-btn {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  margin: 24px 32px 0;
+  transition: all 0.3s;
 }
 
-.mobile-theme-toggle .icon-sun { display: none; }
-.mobile-theme-toggle .icon-moon { display: inline; }
-[data-theme="light"] .mobile-theme-toggle .icon-sun { display: inline; }
-[data-theme="light"] .mobile-theme-toggle .icon-moon { display: none; }
+.mobile-theme-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
 
-.mobile-theme-label-dark { display: inline; }
-.mobile-theme-label-light { display: none; }
-[data-theme="light"] .mobile-theme-label-dark { display: none; }
-[data-theme="light"] .mobile-theme-label-light { display: inline; }
+.mobile-theme-btn .theme-icon-sun { display: none; }
+.mobile-theme-btn .theme-icon-moon { display: block; }
+[data-theme="light"] .mobile-theme-btn .theme-icon-sun { display: block; }
+[data-theme="light"] .mobile-theme-btn .theme-icon-moon { display: none; }
 
 /* SCROLLBAR */
 ::-webkit-scrollbar { width: 8px; }
@@ -290,7 +299,7 @@ nav {
 
 .mobile-menu ul li a {
   display: block;
-  padding: 16px 32px;
+  padding: 20px 32px;
   color: var(--text);
   text-decoration: none;
   font-size: 1rem;
@@ -1181,25 +1190,21 @@ footer {
     <li><a href="#barbers" onclick="toggleMenu()">Barbers</a></li>
     <li><a href="#about" onclick="toggleMenu()">About</a></li>
     <li><a href="#gallery" onclick="toggleMenu()">Instagram</a></li>
+    <li><a href="javascript:void(0)" onclick="toggleMenu(); openLoginModal()">Members</a></li>
     <li><a href="#services" onclick="toggleMenu()">Services</a></li>
     <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-    <li><a href="javascript:void(0)" onclick="toggleMenu(); openLoginModal()">Members</a></li>
-    <li>
-      <a href="javascript:void(0)" onclick="toggleTheme()" class="mobile-theme-toggle">
-        <span class="icon-moon">☽</span>
-        <span class="icon-sun">☀</span>
-        <span class="mobile-theme-label-dark">Light Mode</span>
-        <span class="mobile-theme-label-light">Dark Mode</span>
-      </a>
-    </li>
   </ul>
   <a href="#barbers" class="mobile-book" onclick="toggleMenu()">Book Now</a>
+  <button class="mobile-theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+    <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg class="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+  </button>
 </div>
 
 <!-- FLOATING THEME TOGGLE -->
 <button class="theme-float" onclick="toggleTheme()" aria-label="Toggle theme">
-  <span class="icon-moon">☽</span>
-  <span class="icon-sun">☀</span>
+  <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  <svg class="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
 </button>
 
 <!-- MAIN CONTENT -->
