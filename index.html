@@ -1434,15 +1434,7 @@ footer {
 var NEARCUT_URL = 'https://iframe-55801.nearcut.com';
 
 function openBooking(barberName) {
-  var width = 500;
-  var height = 700;
-  var left = (screen.width - width) / 2;
-  var top = (screen.height - height) / 2;
-  window.open(
-    NEARCUT_URL,
-    'nearcut_booking',
-    'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top + ',scrollbars=yes,resizable=yes'
-  );
+  window.open(NEARCUT_URL, '_blank');
 }
 
 function closeBooking() {
