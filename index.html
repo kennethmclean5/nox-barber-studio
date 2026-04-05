@@ -1132,9 +1132,9 @@ footer {
   .barbers-grid { grid-template-columns: 1fr; gap: 16px; }
   .barber-card {
     display: grid;
-    grid-template-columns: auto 1fr 1fr;
-    grid-template-rows: auto auto auto;
-    gap: 4px 16px;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 4px 20px;
     align-items: center;
     background: transparent;
     border: none;
@@ -1160,23 +1160,23 @@ footer {
     text-align: center;
   }
   .barber-btn {
-    width: auto;
-    padding: 8px 14px;
-    font-size: 0.75rem;
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 0.8rem;
     margin-bottom: 0;
     white-space: nowrap;
   }
   .barber-btn.primary {
     grid-column: 2;
     grid-row: 1;
-    align-self: end;
-    margin-bottom: 4px;
+    align-self: center;
+    padding: 14px 20px;
+    font-size: 0.85rem;
   }
   .barber-btn.secondary {
-    grid-column: 3;
-    grid-row: 1;
-    align-self: end;
-    margin-bottom: 4px;
+    grid-column: 2;
+    grid-row: 2;
+    align-self: center;
   }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
   .contact-grid { grid-template-columns: 1fr; gap: 32px; }
