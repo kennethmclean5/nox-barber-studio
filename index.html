@@ -1235,37 +1235,37 @@ footer {
       <div class="barber-card">
         <div class="barber-photo">Photo</div>
         <div class="barber-name">Kenny</div>
-        <a href="https://iframe-55801.nearcut.com/book/shops/91C0VA/services?filter_barbers%5B%5D=46J79Z" target="_blank" rel="noopener" class="barber-btn primary">Book With Kenny</a>
+        <a href="javascript:void(0)" onclick="openBooking('https://iframe-55801.nearcut.com/book/shops/91C0VA/services?filter_barbers%5B%5D=46J79Z')" class="barber-btn primary">Book With Kenny</a>
         <a href="https://www.instagram.com/novakenn" target="_blank" rel="noopener" class="barber-btn secondary">View on Instagram</a>
       </div>
       <div class="barber-card">
         <div class="barber-photo">Photo</div>
         <div class="barber-name">Jonny</div>
-        <a href="https://iframe-55801.nearcut.com/book/shops/91C0VA/services?filter_barbers%5B%5D=M5WO2K" target="_blank" rel="noopener" class="barber-btn primary">Book With Jonny</a>
+        <a href="javascript:void(0)" onclick="openBooking('https://iframe-55801.nearcut.com/book/shops/91C0VA/services?filter_barbers%5B%5D=M5WO2K')" class="barber-btn primary">Book With Jonny</a>
         <a href="https://www.instagram.com/jonnydove_nbs" target="_blank" rel="noopener" class="barber-btn secondary">View on Instagram</a>
       </div>
       <div class="barber-card">
         <div class="barber-photo">Photo</div>
         <div class="barber-name">Lewis</div>
-        <a href="https://iframe-55801.nearcut.com/book/shops/91C0VA/services?filter_barbers%5B%5D=NVQ4KY" target="_blank" rel="noopener" class="barber-btn primary">Book With Lewis</a>
+        <a href="javascript:void(0)" onclick="openBooking('https://iframe-55801.nearcut.com/book/shops/91C0VA/services?filter_barbers%5B%5D=NVQ4KY')" class="barber-btn primary">Book With Lewis</a>
         <a href="https://www.instagram.com/lewdav_nbs" target="_blank" rel="noopener" class="barber-btn secondary">View on Instagram</a>
       </div>
       <div class="barber-card">
         <div class="barber-photo">Photo</div>
         <div class="barber-name">Sean</div>
-        <a href="https://iframe-55801.nearcut.com/book/shops/91C0VA/services?filter_barbers%5B%5D=M3RNIX" target="_blank" rel="noopener" class="barber-btn primary">Book With Sean</a>
+        <a href="javascript:void(0)" onclick="openBooking('https://iframe-55801.nearcut.com/book/shops/91C0VA/services?filter_barbers%5B%5D=M3RNIX')" class="barber-btn primary">Book With Sean</a>
         <a href="https://www.instagram.com/seanmc_barber" target="_blank" rel="noopener" class="barber-btn secondary">View on Instagram</a>
       </div>
       <div class="barber-card">
         <div class="barber-photo">Photo</div>
         <div class="barber-name">JB</div>
-        <a href="https://iframe-55801.nearcut.com/book/shops/91C0VA/services?filter_barbers%5B%5D=AVGGSG" target="_blank" rel="noopener" class="barber-btn primary">Book With JB</a>
+        <a href="javascript:void(0)" onclick="openBooking('https://iframe-55801.nearcut.com/book/shops/91C0VA/services?filter_barbers%5B%5D=AVGGSG')" class="barber-btn primary">Book With JB</a>
         <a href="https://www.instagram.com/johnnybelcher_nbs" target="_blank" rel="noopener" class="barber-btn secondary">View on Instagram</a>
       </div>
       <div class="barber-card">
         <div class="barber-photo">Photo</div>
         <div class="barber-name">Jude</div>
-        <a href="https://iframe-55801.nearcut.com/book/shops/91C0VA/services?filter_barbers%5B%5D=ZN2KR0" target="_blank" rel="noopener" class="barber-btn primary">Book With Jude</a>
+        <a href="javascript:void(0)" onclick="openBooking('https://iframe-55801.nearcut.com/book/shops/91C0VA/services?filter_barbers%5B%5D=ZN2KR0')" class="barber-btn primary">Book With Jude</a>
         <a href="https://www.instagram.com/judecondiebarbering" target="_blank" rel="noopener" class="barber-btn secondary">View on Instagram</a>
       </div>
     </div>
@@ -1433,8 +1433,8 @@ footer {
 // Booking popup
 var NEARCUT_URL = 'https://iframe-55801.nearcut.com';
 
-function openBooking(barberName) {
-  window.open(NEARCUT_URL, '_blank');
+function openBooking(url) {
+  var w = 500, h = 700; var left = (screen.width - w) / 2; var top = (screen.height - h) / 2; window.open(url, 'nearcut_booking', 'width=' + w + ',height=' + h + ',left=' + left + ',top=' + top + ',scrollbars=yes,resizable=yes');
 }
 
 function closeBooking() {
