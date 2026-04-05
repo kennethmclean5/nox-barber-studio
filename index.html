@@ -1129,43 +1129,30 @@ footer {
   .nav-book { display: none; }
   .nav-members { display: none; }
   .theme-float { display: none; }
-  .barbers-grid { grid-template-columns: 1fr; gap: 10px; }
+  .barbers-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
   .barber-card {
-    display: grid;
-    grid-template-columns: 48px 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 6px 14px;
-    align-items: center;
-    padding: 14px 16px;
-    text-align: left;
+    background: transparent;
+    border: none;
+    padding: 0;
+    text-align: center;
+  }
+  .barber-card:hover {
+    border-color: transparent;
+    transform: none;
   }
   .barber-photo {
-    width: 48px;
-    height: 48px;
-    margin: 0;
-    grid-row: 1 / 3;
-    grid-column: 1;
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 8px;
   }
   .barber-name {
-    margin-bottom: 0;
-    font-size: 0.9rem;
-    grid-column: 2 / 4;
-    grid-row: 1;
+    margin-bottom: 10px;
+    font-size: 0.85rem;
   }
   .barber-btn {
-    width: auto;
-    padding: 8px 12px;
-    font-size: 0.75rem;
-    margin-bottom: 0;
-    white-space: nowrap;
-  }
-  .barber-btn.primary {
-    grid-column: 2;
-    grid-row: 2;
-  }
-  .barber-btn.secondary {
-    grid-column: 3;
-    grid-row: 2;
+    padding: 8px 10px;
+    font-size: 0.7rem;
+    margin-bottom: 6px;
   }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
   .contact-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -1183,10 +1170,12 @@ footer {
 }
 
 @media (max-width: 500px) {
+  .barbers-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .barber-photo { width: 64px; height: 64px; }
+  .barber-btn { font-size: 0.65rem; padding: 7px 8px; }
   .ig-grid { grid-template-columns: repeat(2, 1fr); gap: 2px; }
   .hero-logo { width: 90vw; }
   .hero-cta { padding: 12px 32px; font-size: 0.85rem; }
-  .barber-btn { font-size: 0.7rem; padding: 8px 10px; }
   .contact-grid { gap: 32px; }
   footer { padding: 24px 16px; }
   .footer-socials { gap: 20px; }
