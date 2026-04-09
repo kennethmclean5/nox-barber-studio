@@ -1592,6 +1592,7 @@ async function loadInstagramFeed() {
     if (!res.ok) throw new Error(`API returned ${res.status}`);
 
     const data = await res.json();
+    console.log('IG API response:', data.data?.map(p => ({ type: p.media_type, id: p.id, date: p.timestamp })));
 
     if (!data.data || data.data.length === 0) {
       showPlaceholders(grid);
