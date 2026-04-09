@@ -1601,8 +1601,10 @@ async function loadInstagramFeed() {
     grid.innerHTML = '';
 
     data.data.forEach(post => {
-      // Skip non-image types or use thumbnail for videos
-      const imgSrc = post.media_type === 'VIDEO' ? post.thumbnail_url : post.media_url;
+      // Use thumbnail for videos/reels, media_url for images/carousels
+      const imgSrc = post.media_type === 'VIDEO'
+        ? (post.thumbnail_url || post.media_url)
+        : post.media_url;
       if (!imgSrc) return;
 
       const item = document.createElement('a');
