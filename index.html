@@ -719,16 +719,23 @@ nav {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: var(--bg-input);
   margin: 0 auto 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-muted);
-  font-size: 0.75rem;
+  font-size: 0;
   position: relative;
   overflow: hidden;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 4px 20px rgba(0,0,0,0.3);
 }
+
+.barber-photo.photo-1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+.barber-photo.photo-2 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+.barber-photo.photo-3 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+.barber-photo.photo-4 { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+.barber-photo.photo-5 { background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); }
+.barber-photo.photo-6 { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
 
 .barber-photo::after {
   content: '';
@@ -1604,37 +1611,37 @@ footer {
     </div>
     <div class="barbers-grid reveal">
       <div class="barber-card">
-        <div class="barber-photo">Photo</div>
+        <div class="barber-photo photo-1"></div>
         <div class="barber-name">Kenny</div>
         <a href="javascript:void(0)" onclick="openBooking('https://iframe-55801.nearcut.com/book/shops/91C0VA/services?filter_barbers%5B%5D=46J79Z', 'Kenny')" class="barber-btn primary">Book With Kenny</a>
         <a href="https://www.instagram.com/novakenn" target="_blank" rel="noopener" class="barber-btn secondary">View on Instagram</a>
       </div>
       <div class="barber-card">
-        <div class="barber-photo">Photo</div>
+        <div class="barber-photo photo-2"></div>
         <div class="barber-name">Jonny</div>
         <a href="javascript:void(0)" onclick="openBooking('https://iframe-55801.nearcut.com/book/shops/91C0VA/services?filter_barbers%5B%5D=M5WO2K', 'Jonny')" class="barber-btn primary">Book With Jonny</a>
         <a href="https://www.instagram.com/jonnydove_nbs" target="_blank" rel="noopener" class="barber-btn secondary">View on Instagram</a>
       </div>
       <div class="barber-card">
-        <div class="barber-photo">Photo</div>
+        <div class="barber-photo photo-3"></div>
         <div class="barber-name">Lewis</div>
         <a href="javascript:void(0)" onclick="openBooking('https://iframe-55801.nearcut.com/book/shops/91C0VA/services?filter_barbers%5B%5D=NVQ4KY', 'Lewis')" class="barber-btn primary">Book With Lewis</a>
         <a href="https://www.instagram.com/lewdav_nbs" target="_blank" rel="noopener" class="barber-btn secondary">View on Instagram</a>
       </div>
       <div class="barber-card">
-        <div class="barber-photo">Photo</div>
+        <div class="barber-photo photo-4"></div>
         <div class="barber-name">Sean</div>
         <a href="javascript:void(0)" onclick="openBooking('https://iframe-55801.nearcut.com/book/shops/91C0VA/services?filter_barbers%5B%5D=M3RNIX', 'Sean')" class="barber-btn primary">Book With Sean</a>
         <a href="https://www.instagram.com/seanmc_barber" target="_blank" rel="noopener" class="barber-btn secondary">View on Instagram</a>
       </div>
       <div class="barber-card">
-        <div class="barber-photo">Photo</div>
+        <div class="barber-photo photo-5"></div>
         <div class="barber-name">JB</div>
         <a href="javascript:void(0)" onclick="openBooking('https://iframe-55801.nearcut.com/book/shops/91C0VA/services?filter_barbers%5B%5D=AVGGSG', 'JB')" class="barber-btn primary">Book With JB</a>
         <a href="https://www.instagram.com/johnnybelcher_nbs" target="_blank" rel="noopener" class="barber-btn secondary">View on Instagram</a>
       </div>
       <div class="barber-card">
-        <div class="barber-photo">Photo</div>
+        <div class="barber-photo photo-6"></div>
         <div class="barber-name">Jude</div>
         <a href="javascript:void(0)" onclick="openBooking('https://iframe-55801.nearcut.com/book/shops/91C0VA/services?filter_barbers%5B%5D=ZN2KR0', 'Jude')" class="barber-btn primary">Book With Jude</a>
         <a href="https://www.instagram.com/judecondiebarbering" target="_blank" rel="noopener" class="barber-btn secondary">View on Instagram</a>
