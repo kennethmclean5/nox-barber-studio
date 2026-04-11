@@ -180,6 +180,10 @@ nav {
   display: flex;
   gap: 32px;
   list-style: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .nav-links a {
@@ -1453,7 +1457,15 @@ footer {
   .nav-links { display: none; }
   .nav-book { display: none; }
   .nav-members { display: none; }
-  .theme-float { display: none; }
+  .theme-float {
+    display: flex;
+    bottom: 16px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+    z-index: 150;
+  }
+  .mobile-theme-btn { display: none; }
   .barbers-grid { grid-template-columns: 1fr; gap: 16px; }
   .barber-card {
     display: grid;
