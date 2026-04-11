@@ -117,7 +117,9 @@ body.menu-open {
   background: transparent;
   color: var(--text-muted);
   cursor: pointer;
-  margin: 24px 32px 0;
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
   transition: all 0.3s;
 }
 
@@ -1457,15 +1459,7 @@ footer {
   .nav-links { display: none; }
   .nav-book { display: none; }
   .nav-members { display: none; }
-  .theme-float {
-    display: flex;
-    bottom: 16px;
-    right: 16px;
-    width: 44px;
-    height: 44px;
-    z-index: 150;
-  }
-  .mobile-theme-btn { display: none; }
+  .theme-float { display: none; }
   .barbers-grid { grid-template-columns: 1fr; gap: 16px; }
   .barber-card {
     display: grid;
@@ -2079,6 +2073,10 @@ function toggleTheme() {
   const next = current === 'light' ? 'dark' : 'light';
   html.setAttribute('data-theme', next);
   localStorage.setItem('nox-theme', next);
+  // Force repaint on mobile (fixes Safari/Chrome Mobile backdrop-filter ghosting)
+  document.body.style.display = 'none';
+  void document.body.offsetHeight;
+  document.body.style.display = '';
 }
 
 // Load saved theme (default dark)
